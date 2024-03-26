@@ -1,0 +1,311 @@
+@baseSize: 19vw;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #020410;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: (25 / @baseSize) 12.5%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.navbar a {
+    position: relative;
+    font-size: (16 / @baseSize);
+    color: #e4e4e4;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: (30 / @baseSize);
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: (-6 / @baseSize);
+    width: 100%;
+    height: (2 / @baseSize);
+    background: #e4e4e4;
+    border-radius: (5 / @baseSize);
+    transform: translateY((10 / @baseSize));
+    opacity: 0;
+    translate: .5s;
+}
+
+.navbar a:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.search-bar {
+    width: (250 / @baseSize);
+    height: (45 / @baseSize);
+    background: transparent;
+    border: (2 / @baseSize) solid #e4e4e4;
+    border-radius: (6 / @baseSize);
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: (16 / @baseSize);
+    color: #e4e4e4;
+    padding-left: (10 / @baseSize);
+}
+
+.search-bar input::placeholder {
+    color: #e4e4e4;
+}
+
+.search-bar button {
+    width: (40 / @baseSize);
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.search-bar button i {
+    font-size: (22 / @baseSize);
+    color: #e4e4e4;
+}
+
+.background {
+    width: 100%;
+    height: 100vh;
+    background: url('background.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: blur((10 / @baseSize));
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    height: (550 / @baseSize);
+    background: url('background.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: (10 / @baseSize);
+    margin-top: (20 / @baseSize);
+    border: (1 / @baseSize) solid #c4103d;
+}
+
+.container .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 58%;
+    height: 100%;
+    background: transparent;
+    padding: (80 / @baseSize);
+    color: #feefef;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.content .logo {
+    font-size: (30 / @baseSize);
+}
+
+.text-sci h2 {
+    font-size: (40 / @baseSize);
+    line-height: 1;
+}
+
+.text-sci h2 span {
+    font-size: (25 / @baseSize);
+}
+
+.text-sci p {
+    font-size: (16 / @baseSize);
+    margin: (20 / @baseSize) 0;
+}
+
+.social-icons a i {
+    font-size: (22 / @baseSize);
+    color: #e4e4e4;
+    margin-right: (10 / @baseSize);
+    transition: .5s ease;
+}
+
+.social-icons a:hover i {
+    transform: scale(1.2);
+}
+
+.container .logreg-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - 58%);
+    height: 100%;
+    overflow: hidden;
+    border-radius: (10 / @baseSize);
+}
+
+.logreg-box .form-box {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    backdrop-filter: blur(20 / @baseSize);
+    border-top-right-radius: (10 / @baseSize);
+    border-bottom-right-radius: (10 / @baseSize);
+    color: #e4e4e4;
+}
+
+.logreg-box .form-box.login {
+    transform: translateX(0);
+    transition: transform .6s ease;
+    transition-delay: .7s;
+}
+
+.logreg-box.active .form-box.login {
+    transform: translateX((530 / @baseSize));
+    transition-delay: 0s;
+}
+
+.logreg-box .form-box.register {
+    transform: translateX((530 / @baseSize));
+    transition: transform .6s ease;
+    transition-delay: 0s;
+}
+
+.logreg-box.active .form-box.register {
+    transform: translateX(0);
+    transition-delay: .7s;
+}
+
+.form-box h2 {
+    font-size: (32 / @baseSize);
+    text-align: center;
+}
+
+.form-box .input-box {
+    position: relative;
+    width: (340 / @baseSize);
+    height: (50 / @baseSize);
+    border-bottom: (2 / @baseSize) solid #e4e4e4;
+    margin: (30 / @baseSize) 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: (16 / @baseSize);
+    color: #e4e4e4;
+    font-weight: 500;
+    padding-right: (28 / @baseSize);
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: (16 / @baseSize);
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s ease;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: (-5 / @baseSize);
+}
+
+.input-box .icon {
+    position: absolute;
+    top: (13 / @baseSize);
+    right: 0;
+    font-size: (19 / @baseSize);
+}
+
+.form-box .remember-forgot {
+    font-size: (14.5 / @baseSize);
+    font-weight: 500;
+    margin: (-15 / @baseSize) 0 (15 / @baseSize);
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: #e4e4e4;
+    margin-right: (7 / @baseSize);
+}
+
+.remember-forgot a {
+    color: #e4e4e4;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: (45 / @baseSize);
+    background: #c4103d;
+    border: none;
+    outline: none;
+    border-radius: (4 / @baseSize);
+    cursor: pointer;
+    font-size: (16 / @baseSize);
+    color: #e4e4e4;
+    font-weight: 500;
+    box-shadow: 0 0 (10 / @baseSize) rgba(0, 0, 0, .5);
+}
+
+.form-box .login-register {
+    font-size: (14.5 / @baseSize);
+    font-weight: 500;
+    text-align: center;
+    margin-top: (25 / @baseSize);
+    color: #ffffff;
+}
+
+.login-register p a {
+    color: #e4e4e4;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}
